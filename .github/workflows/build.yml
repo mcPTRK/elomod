@@ -3,6 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: elomod
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -16,4 +19,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: elomod-jar
-          path: build/libs/elomod-1.0.0.jar
+          path: elomod/build/libs/elomod-1.0.0.jar
